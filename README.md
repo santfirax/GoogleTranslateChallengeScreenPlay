@@ -38,7 +38,7 @@ Primer Escenario con Chrome: `gradle clean test -Dcucumber.options="--tags @Tran
 
 Segundo Escenario con Firefox: `gradle clean test -Dcucumber.options="--tags @TranslateFromGoogleSearch" -D webdriver.driver=firefox`
 
-Ambos Escenarios se pueden ejecutar en Chrome y Firefox solamente se debe especificar si es chrome o firefox cuando se pasa la opción `webdriver.driver` en caso tal de que no se especifique esta opción el browser por defecto sera Firefox
+Ambos Escenarios se pueden ejecutar en Chrome y Firefox solamente se debe especificar si es Chrome o Firefox cuando se pasa la opción `webdriver.driver` en caso tal de que no se especifique esta opción el browser por defecto sera Firefox
 
 ####Evidencia
 la evidencia producida esta en la siguiente ruta:
