@@ -3,9 +3,9 @@ Se realizo la automatización de Google Translate.
 
 para este reto se necesita las siguientes herramientas listadas a continuacion:
 
-* [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/index.html "JDK 1.8") o superior.
-* [Git](https://git-scm.com/,"Git") instalado.
-* [Gradle](https://gradle.org/install/,"Gradle")
+* [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/index.html) o superior.
+* [Git](https://git-scm.com/) instalado.
+* [Gradle](https://gradle.org/install/)
 * Google Chrome y Firefox instalado
 * Se recomienda como IDE IntelliJ IDEA o Eclipse.
 * File Enconding aplicado: UTF-8.
@@ -32,7 +32,7 @@ Para el primer Escenario `gradle clean test -Dcucumber.options="--tags @Translat
 
 para el segundo Escenario `gradle clean test -Dcucumber.options="--tags @TranslateFromGoogleSearch"`
 
-Para especificar el driver se agrega `-D webdriver.driver=chrome`
+Para especificar el driver se agrega `-D webdriver.driver`
 
 Primer Escenario con Chrome: `gradle clean test -Dcucumber.options="--tags @TranslateFromApp" -D webdriver.driver=chrome`
 
@@ -43,3 +43,6 @@ Ambos Escenarios se pueden ejecutar en Chrome y Firefox solamente se debe especi
 ####Evidencia
 la evidencia producida esta en la siguiente ruta:
 `target//site//serenity` en el arcivo index.html
+
+###Nota:
+* Los Escenarios fueron planteados desde Google en idioma español
