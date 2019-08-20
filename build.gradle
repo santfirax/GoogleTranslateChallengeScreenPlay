@@ -1,0 +1,56 @@
+group 'com.challenge.googletranslate'
+version '0.0.1'
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.55")
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin:'jacoco'
+apply plugin: 'org.sonarqube'
+
+ext {
+    slf4jVersion = '1.7.7'
+    serenityCoreVersion = '2.0.55'
+    serenityCucumberVersion = '1.9.40'
+    junitVersion = '4.12'
+    assertJVersion = '3.8.0'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+dependencies {
+    compile "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
+    testCompile "junit:junit:${junitVersion}",
+            "org.assertj:assertj-core:${assertJVersion}",
+            "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+            "org.slf4j:slf4j-simple:${slf4jVersion}"
+
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate, reports)
