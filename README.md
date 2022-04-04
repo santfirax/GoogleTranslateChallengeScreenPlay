@@ -1,48 +1,52 @@
-#Challenge Google Translate
-Se realizo la automatización de Google Translate.
+# Challenge Google Translate
 
-para este reto se necesita las siguientes herramientas listadas a continuacion:
+This is a test automation challenge
+using [SerenityBDD](https://serenity-bdd.github.io/theserenitybook/latest/index.html), Java and Gradle. The use case is
+to translate a sentence using Google Translate.
 
-* [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/index.html) o superior.
-* [Git](https://git-scm.com/) instalado.
-* [Gradle](https://gradle.org/install/)
-* Google Chrome y Firefox instalado
-* Se recomienda como IDE IntelliJ IDEA o Eclipse.
-* File Enconding aplicado: UTF-8.
+For this challenge, you need the following tools:
 
-##Empezemos
+* [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or above.
+* [Git](https://git-scm.com/) installed.
+* [Gradle](https://gradle.org/install/) installed
+* Google Chrome and Firefox installed
+* Any IDE
+* File Enconding: UTF-8.
 
-Descargar o clonar el repositorio desde https://github.com/santfirax/GoogleTranslateChallengeScreenPlay.git
+## Let's get started
+
+To download or clone this project https://github.com/santfirax/GoogleTranslateChallengeScreenPlay.git
 
 `git clone https://github.com/santfirax/GoogleTranslateChallengeScreenPlay.git`
 
-###Para ejecutar la automatización en Google Chrome
+## How to execute the test automation on Google Chrome
 
 `gradle clean test -D webdriver.driver=chrome`
 
-###Para ejecutar la automatización desde Firefox 
+## How to execute the automation on Firefox
+
 `gradle clean test -D webdriver.driver=firefox`
 
-###Para ejecutar la automatización usando tags
-cada Escenario tiene mapeado un tag que lo representa, los tags son los siguientes:
+## How to execute the test automation on a web browser using Cucumber tags
+
+Each Scenario is mapped with a tag, Tags available are:
+
 * @TranslateFromApp
 * @TranslateFromGoogleSearch
 
-Para el primer Escenario `gradle clean test -Dcucumber.options="--tags @TranslateFromApp"`
+To run first Scenario, run the following command in the
+project`gradle clean test -Dcucumber.options="--tags @TranslateFromApp"`
 
-para el segundo Escenario `gradle clean test -Dcucumber.options="--tags @TranslateFromGoogleSearch"`
+To run the second Scenario, run the following command in the
+project `gradle clean test -Dcucumber.options="--tags @TranslateFromGoogleSearch"`
 
-Para especificar el driver se agrega `-D webdriver.driver`
+To specify the webdriver, you can use `-D webdriver.driver=myDriver`
 
-Primer Escenario con Chrome: `gradle clean test -Dcucumber.options="--tags @TranslateFromApp" -D webdriver.driver=chrome`
+To run first Scenario on Google Chrome, run the following
+command: `gradle clean test -Dcucumber.options="--tags @TranslateFromApp" -D webdriver.driver=chrome`
 
-Segundo Escenario con Firefox: `gradle clean test -Dcucumber.options="--tags @TranslateFromGoogleSearch" -D webdriver.driver=firefox`
+To run second Scenario on Firefox, run the following
 
-Ambos Escenarios se pueden ejecutar en Chrome y Firefox solamente se debe especificar si es Chrome o Firefox cuando se pasa la opción `webdriver.driver` en caso tal de que no se especifique esta opción el browser por defecto sera Firefox
-
-####Evidencia
-la evidencia producida esta en la siguiente ruta:
-`target//site//serenity` en el arcivo index.html
-
-###Nota:
-* Los Escenarios fueron planteados desde Google en idioma español
+## Evidence
+Evidence can be found on :
+`target//site//serenity` in the file index.html

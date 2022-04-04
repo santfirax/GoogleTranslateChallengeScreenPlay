@@ -20,25 +20,23 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'net.serenity-bdd.aggregator'
-apply plugin:'jacoco'
+apply plugin: 'jacoco'
 apply plugin: 'org.sonarqube'
 
 ext {
     slf4jVersion = '1.7.7'
-    serenityCoreVersion = '2.0.55'
-    serenityCucumberVersion = '1.9.40'
+    serenityCoreVersion = '2.4.24'
+    serenityCucumberVersion = '2.4.24'
     junitVersion = '4.12'
     assertJVersion = '3.8.0'
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 dependencies {
-    compile "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+    implementation "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
-            "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
-    testCompile "junit:junit:${junitVersion}",
+            "net.serenity-bdd:serenity-cucumber6:${serenityCucumberVersion}"
+    testImplementation "junit:junit:${junitVersion}",
             "org.assertj:assertj-core:${assertJVersion}",
             "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
